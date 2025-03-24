@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+      body {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      table, th, td {
+        border: solid black 1px;
+      }
+      th, td {
+        padding: 8px;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Multiplication Table</h1>
+    <script>
+      let table = document.createElement("table");
+      for (let a = 0; a < 6; a++){
+        let tr = document.createElement("tr");
+        for (let b = 0; b < 6; b++){
+          let t = document.createElement("th");
+          if (b == 0){
+            t.innerHTML = a;
+          } else {
+            if (a == 0){
+              t.innerHTML = b;
+            } else {
+              t = document.createElement("td");
+              t.innerHTML = a * b;
+            }
+          }
+          if (a == 0 && b == 0){
+            t.innerHTML = "x";
+          }
+          tr.appendChild(t);
+          table.appendChild(tr);
+        }
+      }
+      document.getElementsByTagName("body")[0].appendChild(table);
+    </script>
+  </body>
+</html>
